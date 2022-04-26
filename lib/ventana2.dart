@@ -19,22 +19,29 @@ class Ventana2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Shader linearGradient = const LinearGradient(
+      colors: <Color>[
+        Color.fromARGB(255, 137, 136, 136),
+        Color.fromARGB(255, 179, 178, 178)
+      ],
+    ).createShader(const Rect.fromLTWH(0.0, 0.0, 20.0, 7.0));
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYi6963hlTgJQaYjul4Tx50goY0v7wnfD_ag&usqp=CAU"),
+            image: NetworkImage("../assets/images.jpg"),
             fit: BoxFit.cover,
           ),
         ),
         child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 350),
+            padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 70),
             child: RichText(
               text: TextSpan(
                 text: 'Bienvenidoa ',
-                style: const TextStyle(
-                    fontSize: 20, fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                    foreground: Paint()..shader = linearGradient),
                 children: <TextSpan>[
                   TextSpan(
                       text: nombre,

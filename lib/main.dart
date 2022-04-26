@@ -48,7 +48,12 @@ class _MyAppState extends State<MyApp> {
                       ));
                 },
                 title: Text(
-                    _personas[index].matricula + ' ' + _personas[index].nombre),
+                  _personas[index].matricula + ' ' + _personas[index].nombre,
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(0.8),
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
                 subtitle: Text(_personas[index].telefono),
                 leading: CircleAvatar(
                   child: Text(_personas[index].nombre.substring(0, 1)),
@@ -59,32 +64,6 @@ class _MyAppState extends State<MyApp> {
           )),
     );
   }
-
-  /*_borrarPersona(context, Estudiante persona) {
-    showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-              title: const Text("Eliminar contacto"),
-              content: const Text("seguro"),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text("Cancelar")),
-                TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _personas.remove(persona);
-                      });
-
-                      Navigator.pop(context);
-                    },
-                    child: const Text("Borrar",
-                        style: TextStyle(color: Colors.red)))
-              ],
-            ));
-  }*/
 }
 
 class Estudiante {
