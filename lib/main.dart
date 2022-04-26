@@ -25,9 +25,14 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
+            backgroundColor: const Color.fromARGB(255, 181, 52, 43),
             centerTitle: true,
             title: const Text(
               'Primera API',
+              style: TextStyle(
+                color: Colors.black,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
           body: ListView.builder(
@@ -56,6 +61,7 @@ class _MyAppState extends State<MyApp> {
                 ),
                 subtitle: Text(_personas[index].telefono),
                 leading: CircleAvatar(
+                  backgroundColor: const Color.fromARGB(255, 174, 48, 39),
                   child: Text(_personas[index].nombre.substring(0, 1)),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios),

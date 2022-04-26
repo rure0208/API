@@ -22,9 +22,7 @@ class Ventana2 extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: NetworkImage(
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/La_leyenda_negra_y_la_verdad_hist%C3%B3rica_1914.djvu/page1-1200px-La_leyenda_negra_y_la_verdad_hist%C3%B3rica_1914.djvu.jpg"),
-            fit: BoxFit.cover),
+            image: AssetImage("assets/images/uno.jpg"), fit: BoxFit.cover),
       ),
       child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 100),
