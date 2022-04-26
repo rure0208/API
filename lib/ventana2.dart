@@ -19,54 +19,57 @@ class Ventana2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      /*decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(""),
-          fit: BoxFit.cover,
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYi6963hlTgJQaYjul4Tx50goY0v7wnfD_ag&usqp=CAU"),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),*/
-      child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 100),
-          child: RichText(
-            text: TextSpan(
-              text: 'Bienvenido/a ',
-              style:
-                  const TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
-              children: <TextSpan>[
-                TextSpan(
-                    text: nombre,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const TextSpan(text: ', con matricula:  '),
-                TextSpan(
-                    text: matricula,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const TextSpan(
-                    text: ',  te encuentras cursando la carrera de:  '),
-                TextSpan(
-                    text: carrera,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const TextSpan(text: ', en el semetre de:  '),
-                TextSpan(
-                    text: semestre,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const TextSpan(text: ',  cuyos datos de contacto son:  '),
-                TextSpan(
-                    text: "$telefono,",
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                TextSpan(
-                    text: " $email",
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            textAlign: TextAlign.center,
-          )),
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 350),
+            child: RichText(
+              text: TextSpan(
+                text: 'Bienvenidoa ',
+                style: const TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.normal),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: nombre,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const TextSpan(text: ', con matricula:  '),
+                  TextSpan(
+                      text: matricula,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const TextSpan(
+                      text: ',  te encuentras cursando la carrera de:  '),
+                  TextSpan(
+                      text: carrera,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const TextSpan(text: ', en el semetre de:  '),
+                  TextSpan(
+                      text: semestre,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const TextSpan(text: ',  cuyos datos de contacto son:  '),
+                  TextSpan(
+                      text: "$telefono,",
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: " $email",
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            )),
+      ),
     );
   }
 }

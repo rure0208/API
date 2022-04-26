@@ -12,12 +12,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final List<Estudiante> _personas = [
-    Estudiante("17760210", "Efrain", "sistemas", "9no", "6462113536",
-        "er388928@gmail.com"),
-    Estudiante("17760220", "Ruiz", "sistemas", "9no", "6462113536",
-        "er388928@gmail.com"),
-    Estudiante("17760230", "Rodriguez", "sistemas", "9no", "6462113536",
-        "er388928@gmail.com"),
+    Estudiante("17760210", "Efrain Ruiz Rodriguez", "sistemas", "9no",
+        "6462113536", "al17760210@ite.edu.mx"),
+    Estudiante("17760221", "Jazmin Perez Espiritu", "sistemas", "8no",
+        "6461308233", "al17760221@ite.edu.mx"),
+    Estudiante("17760230", "Efrain Ruiz Jimenez", "sistemas", "11vo",
+        "6461501272", "al17760230@ite.edu.mx"),
   ];
   @override
   Widget build(BuildContext context) {
