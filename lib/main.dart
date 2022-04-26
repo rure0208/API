@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                       ));
                 },
                 title: Text(
-                  _personas[index].matricula + ' ' + _personas[index].nombre,
+                  _personas[index].nombre,
                   style: TextStyle(
                     color: Colors.black.withOpacity(0.8),
                     fontStyle: FontStyle.italic,
