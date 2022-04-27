@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           body: ListView.builder(
+            // ignore: unnecessary_null_comparison
             itemCount: personas == null ? 0 : personas.length,
             itemBuilder: (BuildContext context, int index) {
               var nombre = personas[index]['nombre'];
@@ -70,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                 title: Text(nombre),
                 subtitle: Text(telefono),
                 leading: const CircleAvatar(
-                  backgroundColor: const Color.fromARGB(255, 174, 48, 39),
+                  backgroundColor: Color.fromARGB(255, 174, 48, 39),
                   child: Icon(Icons.account_box_rounded),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios),
