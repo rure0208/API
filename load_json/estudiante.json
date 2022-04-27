@@ -1,9 +1,19 @@
 [{
-    "nombre": "efrain",
-    "telefono ": "efrain",
-    "matricula": "efrain",
-    "carrera": "efrain",
-    "semestre": "efrain",
-    "email": "efrain",
-    "telefono": "efrain"
-}]
+        "nombre": "Efrain Ruiz Rodriguez",
+        "telefono ": "6462111212",
+        "matricula": "17760210",
+        "carrera": "Ing Sistemas Computacionales",
+        "semestre": "10 mo",
+        "email": "al17760210@ite.edu.mx",
+        "telefono": "6462113530"
+    },
+    {
+        "nombre": "Jamin Perez",
+        "telefono ": "6462111111",
+        "matricula": "17760220",
+        "carrera": "Lic Gastronomia",
+        "semestre": "4 mo",
+        "email": "al17760220@ite.edu.mx",
+        "telefono": "6462113531"
+    }
+]
