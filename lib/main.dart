@@ -1,9 +1,5 @@
-import 'dart:convert';
-import 'dart:async' show Future;
 import 'package:api/ventana2.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,19 +11,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late List personas = [];
-  Future<String> loadJsonData() async {
-    var jsonText = await rootBundle.loadString('load_json/estudiante.json');
-    setState(() => personas = json.decode(jsonText));
-    return 'success';
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    loadJsonData();
-  }
-
+  final List<Estudiante> _personas = [
+    Estudiante("17760210", "Efrain Ruiz Rodriguez", "sistemas", "9no",
+        "6462113536", "al17760210@ite.edu.mx"),
+    Estudiante("17760221", "Jazmin Perez Espiritu", "sistemas", "8no",
+        "6461308233", "al17760221@ite.edu.mx"),
+    Estudiante("17760230", "Efrain Ruiz Jimenez", "sistemas", "11vo",
+        "6461501272", "al17760230@ite.edu.mx"),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,33 +36,33 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           body: ListView.builder(
-            itemCount: personas == null ? 0 : personas.length,
+            itemCount: _personas.length,
             itemBuilder: (BuildContext context, int index) {
-              var nombre = personas[index]['nombre'];
-              var telefono = personas[index]['telefono'];
-              var matricula = personas[index]['matricula'];
-              var carrera = personas[index]['carrera'];
-              var semestre = personas[index]['semestre'];
-              var email = personas[index]['email'];
               return ListTile(
                 onLongPress: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Ventana2(
-                            matricula: matricula,
-                            nombre: nombre,
-                            carrera: carrera,
-                            semestre: semestre,
-                            telefono: telefono,
-                            email: email),
+                            matricula: _personas[index].matricula,
+                            nombre: _personas[index].nombre,
+                            carrera: _personas[index].carrera,
+                            semestre: _personas[index].semestre,
+                            telefono: _personas[index].telefono,
+                            email: _personas[index].email),
                       ));
                 },
-                title: Text(nombre),
-                subtitle: Text(telefono),
-                leading: const CircleAvatar(
+                title: Text(
+                  _personas[index].nombre,
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(0.8),
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                subtitle: Text(_personas[index].telefono),
+                leading: CircleAvatar(
                   backgroundColor: const Color.fromARGB(255, 174, 48, 39),
-                  child: Icon(Icons.account_box_rounded),
+                  child: Text(_personas[index].nombre.substring(0, 1)),
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios),
               );
@@ -79,4 +70,16 @@ class _MyAppState extends State<MyApp> {
           )),
     );
   }
+}
+
+class Estudiante {
+  String matricula;
+  String nombre;
+  String carrera;
+  String semestre;
+  String telefono;
+  String email;
+
+  Estudiante(this.matricula, this.nombre, this.carrera, this.semestre,
+      this.telefono, this.email);
 }
